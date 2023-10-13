@@ -1,7 +1,11 @@
 $(document).ready(function () {
+	var playCount = 0;
 	let video = document.querySelector('video');
     video.addEventListener('play', function () {
-        setVedioRate(2);
+		if (playCount == 0) {
+			setVedioRate(2);
+		}
+		playCount++;
     }, false);
 
 	$(document).keydown(function(event){
