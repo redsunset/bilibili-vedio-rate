@@ -1,11 +1,12 @@
 $(document).ready(function () {
-	var playCount = 0;
+	var lastUrl = null;
 	let video = document.querySelector('video');
     video.addEventListener('play', function () {
-		if (playCount == 0) {
+		var curUrl = window.location.href;
+		if (lastUrl == null || lastUrl !== curUrl) {
 			setVedioRate(2);
+			lastUrl = curUrl;
 		}
-		playCount++;
     }, false);
 
 	$(document).keydown(function(event){
