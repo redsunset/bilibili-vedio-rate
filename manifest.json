@@ -1,0 +1,18 @@
+{
+  "name": "bilibili-vedio-rate", 
+  "description": "调整b站视频播放速度小插件",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "permissions": [
+      "scripting"
+  ],
+  "host_permissions": [
+      "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.bilibili.com/video/*"],
+      "js": ["jquery.min.js","bilibili.js"]
+    }
+  ]
+}
